@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!--
+      现代简约记账图标：
+      - 圆角矩形钱包/账本主体
+      - 中间一条弧线代表钱包开口
+      - 右下角圆形硬币装饰
+    -->
+    <!-- 主体：圆角矩形 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,26 L78,26 C81.3,26 84,28.7 84,32 L84,76 C84,79.3 81.3,82 78,82 L30,82 C26.7,82 24,79.3 24,76 L24,32 C24,28.7 26.7,26 30,26 Z" />
+    <!-- 内页阴影/层次感 -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M30,26 L78,26 C81.3,26 84,28.7 84,32 L84,38 C84,38 60,42 54,42 C48,42 24,38 24,38 L24,32 C24,28.7 26.7,26 30,26 Z" />
+    <!-- 钱包开口弧线 -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M24,38 C24,38 48,42 54,42 C60,42 84,38 84,38 L84,42 C84,42 60,46 54,46 C48,46 24,42 24,42 Z" />
+    <!-- 第一条记录线 -->
+    <path
+        android:fillColor="#90A4AE"
+        android:pathData="M38,54 L58,54 C59.1,54 60,54.9 60,56 C60,57.1 59.1,58 58,58 L38,58 C36.9,58 36,57.1 36,56 C36,54.9 36.9,54 38,54 Z" />
+    <!-- 第二条记录线 -->
+    <path
+        android:fillColor="#90A4AE"
+        android:pathData="M38,64 L52,64 C53.1,64 54,64.9 54,66 C54,67.1 53.1,68 52,68 L38,68 C36.9,68 36,67.1 36,66 C36,64.9 36.9,64 38,64 Z" />
+    <!-- 硬币：外圆 -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M68,60 C73.5,60 78,64.5 78,70 C78,75.5 73.5,80 68,80 C62.5,80 58,75.5 58,70 C58,64.5 62.5,60 68,60 Z" />
+    <!-- 硬币：内圆 -->
+    <path
+        android:fillColor="#FF8F00"
+        android:pathData="M68,64 C71.3,64 74,66.7 74,70 C74,73.3 71.3,76 68,76 C64.7,76 62,73.3 62,70 C62,66.7 64.7,64 68,64 Z" />
+    <!-- 硬币：¥ 符号竖线 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M67,66 L69,66 L69,74 L67,74 Z" />
+    <!-- 硬币：¥ 符号横线 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M65,69 L71,69 L71,71 L65,71 Z" />
+</vector>

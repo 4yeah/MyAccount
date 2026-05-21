@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">豪账本</string>
+    <string name="accessibility_service_description">自动读取微信/支付宝支付通知，快速记账</string>
+</resources>
