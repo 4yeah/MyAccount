@@ -38,17 +38,25 @@ class BackupViewModel(
         private const val TAG = "BackupViewModel"
 
         /**
-         * 从本地配置文件加载 OSS 配置
-         * 如果配置文件不存在或解析失败，返回 null
+         * 从本地配置文件加载 OSS 配置。
+         * 优先从 filesDir 读取；若不存在则尝试从 assets 复制到 filesDir。
+         * 如果配置文件不存在或解析失败，返回 null。
          */
         private fun loadOSSConfigFromLocalFile(context: android.content.Context): OSSConfig? {
             return try {
                 val configFile = File(context.filesDir, "oss-config.json")
-                if (!configFile.exists()) return null
-                
+                // 若 filesDir 中不存在，则从 assets 复制
+                if (!configFile.exists()) {
+                    context.assets.open("oss-config.json").use { input ->
+                        configFile.outputStream().use { output ->
+                            input.copyTo(output)
+                        }
+                    }
+                }
+
                 val jsonString = configFile.readText()
                 val json = org.json.JSONObject(jsonString)
-                
+
                 OSSConfig(
                     endpoint = json.optString("endpoint"),
                     accessKeyId = json.optString("accessKeyId"),
@@ -56,7 +64,7 @@ class BackupViewModel(
                     bucketName = json.optString("bucketName")
                 )
             } catch (e: Exception) {
-                e.printStackTrace()
+                Log.w(TAG, "无法加载 OSS 配置文件", e)
                 null
             }
         }

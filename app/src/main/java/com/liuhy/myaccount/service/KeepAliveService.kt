@@ -43,7 +43,7 @@ class KeepAliveService : Service() {
         }
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle("支付自动记账运行中")
             .setContentText("监听微信/支付宝收款通知")
             .setPriority(NotificationCompat.PRIORITY_LOW)

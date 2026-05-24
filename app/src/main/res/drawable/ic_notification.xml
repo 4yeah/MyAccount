@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  通知栏小图标：纯白单色矢量图
+  Android 通知栏只认 Alpha 通道，所有 fillColor 必须为 #FFFFFF
+  系统会自动应用主题颜色
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 账本主体：圆角矩形 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M4,2 L20,2 C21.1,2 22,2.9 22,4 L22,20 C22,21.1 21.1,22 20,22 L4,22 C2.9,22 2,21.1 2,20 L2,4 C2,2.9 2.9,2 4,2 Z" />
+    <!-- 账本顶部折页 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M2,4 L2,8 C2,8 10,9 12,9 C14,9 22,8 22,8 L22,4 C22,2.9 21.1,2 20,2 L4,2 C2.9,2 2,2.9 2,4 Z" />
+    <!-- ¥ 符号（透空，让背景色透出） -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M10,10 L12,12 L14,10"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M8,14 L16,14"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M12,12 L12,18"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round" />
+</vector>

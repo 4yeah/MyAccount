@@ -127,9 +127,15 @@ class TransactionViewModel(
             } else {
                 categoryRepo.getIncomeCategories()
             }
-            val firstNonEmpty = flow.first { it.isNotEmpty() }
+            val categories = flow.first { it.isNotEmpty() }
             if (_uiState.value.categoryId == null) {
-                _uiState.value = _uiState.value.copy(categoryId = firstNonEmpty.first().id)
+                // 从通知预填进入时，支出默认选中"餐饮"，收入取第一个
+                val defaultCategory = if (newType == TransactionType.EXPENSE) {
+                    categories.find { it.name == "餐饮" } ?: categories.first()
+                } else {
+                    categories.first()
+                }
+                _uiState.value = _uiState.value.copy(categoryId = defaultCategory.id)
             }
         }
     }

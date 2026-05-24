@@ -179,7 +179,7 @@ class PaymentNotificationListener : NotificationListenerService() {
 
         val typeLabel = if (parsed.type == "INCOME") "收入" else "支出"
         val notif = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle("检测到一笔$typeLabel：¥${"%.2f".format(parsed.amount)}")
             .setContentText("点此快速记账（来源：${pkgDisplayName(parsed.sourcePkg)}）")
             .setStyle(NotificationCompat.BigTextStyle().bigText(parsed.note))
